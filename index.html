@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TOP Sign-up Form</title>
+  </head>
+  <body>
+    <main class="page">
+      <div class="image_sidebar">
+        <div class="image__logo">
+          <img class="logo" src="./images/odin-lined.png" alt="" />
+          <h1 class="image__brand">TOP</h1>
+        </div>
+      </div>
+      <div class="content">
+        <div class="content__header container">
+          <p class="content__text">
+            This is not a real online service! You know you need something like
+            this in your life to help you realize your deepest dreams
+          </p>
+          <p class="content__text">Sign up <em>now</em> to get started</p>
+          <p class="content__text">You know you want to.</p>
+        </div>
+        <div class="content__form">
+          <fieldset class="container form__wrapper">
+            <legend class="form__header">Let's do this!</legend>
+            <form id="create_account" name="account__form" class="form">
+              <div class="form__leftSide">
+                <label for="fname">FIRST NAME</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="fname"
+                  name="first_name"
+                  minlength="1"
+                  required=""
+                />
+                <p class="error__msg"></p>
+                <label for="email">EMAIL</label>
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  required=""
+                />
+                <p class="error__msg"></p>
+
+                <label for="password">PASSWORD</label>
+                <input
+                  class="form__input"
+                  type="password"
+                  id="password"
+                  minlength="1"
+                  name="password"
+                  required=""
+                />
+                <p class="error__msg"></p>
+              </div>
+              <div class="form__rightSide">
+                <label for="lname">LAST NAME</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="lname"
+                  minlength="1"
+                  name="last_name"
+                />
+                <p class="error__msg"></p>
+
+                <label for="tel_number">PHONE NUMBER</label>
+                <input
+                  class="form__input"
+                  type="text"
+                  id="tel_number"
+                  name="telephone_number"
+                  minlength="9"
+                  maxlength="9"
+                />
+                <p class="error__msg"></p>
+
+                <label for="confirm_password">CONFIRM PASSWORD</label>
+                <input
+                  class="form__input"
+                  type="password"
+                  id="confirm_password"
+                  name="password"
+                  required=""
+                />
+                <p class="error__msg"></p>
+              </div>
+            </form>
+          </fieldset>
+        </div>
+        <div class="cta__area container">
+          <button
+            type="submit"
+            class="btn__createAccount"
+            form="create_account"
+          >
+            Create Account
+          </button>
+          <p class="btn__account">
+            Already have an account? <a href="#" class="btn__login">Log in</a>
+          </p>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

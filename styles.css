@@ -1,0 +1,234 @@
+*::after,
+*::before,
+body,
+fieldset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --spartan-font: "League Spartan", -apple-system, sans-serif;
+  --cta: #234e9e;
+  --input__border: #e5e7eb;
+  --error: #af0606;
+  --page-color: rgb(248, 249, 255);
+}
+
+.container {
+  margin: 0 2rem 0 2rem;
+}
+
+.page {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--page-color);
+  grid-template-areas:
+    "img signUp"
+    "img signUp"
+    "img signUp";
+}
+
+.image_sidebar {
+  grid-area: img;
+  background-image: url("./images/tokyo.jpg");
+  width: 40vw;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.image__logo {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 15%;
+  column-gap: 1rem;
+  align-items: center;
+  padding: 10px 0;
+  background-color: rgba(17, 0, 56, 0.247);
+}
+
+.logo {
+  height: 15vh;
+}
+
+.image__brand {
+  color: var(--page-color);
+  font-size: 3rem;
+  font-family: "Anton", sans-serif;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr) auto;
+  width: 60vw;
+  grid-area: signUp;
+  grid-template-areas:
+    "header header"
+    "form form"
+    "cta cta";
+}
+
+.content__header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  font-family: var(--spartan-font);
+  font-size: clamp(1.3rem, 3vw, 2.5rem);
+  max-width: 80%;
+}
+.content__text:first-child {
+  margin-bottom: 0;
+  line-height: 105%;
+}
+.content__text:nth-child(2) {
+  margin-top: 0;
+}
+.content__text:last-child {
+  margin-top: 0;
+}
+
+.content__form {
+  grid-area: form;
+  background-color: var(--page-color);
+  filter: drop-shadow(15px 15px 0.5rem rgba(165, 180, 252, 0.315));
+}
+
+.cta__area {
+  grid-area: cta;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 1.3rem;
+}
+
+.btn__createAccount {
+  border: none;
+  background-color: var(--cta);
+  color: #fff;
+  font-family: var(--spartan-font);
+  font-weight: 600;
+  font-size: 1.3rem;
+  border-radius: 7px;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn__createAccount:hover {
+  background-color: rgb(23, 65, 128);
+}
+
+.form__wrapper {
+  display: flex;
+  padding: 2rem 0;
+  font-family: var(--spartan-font);
+  border: none;
+  height: 100%;
+}
+
+.form__header {
+  padding-top: 1.3rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.form {
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  width: 100%;
+}
+
+.form label {
+  font-weight: 600;
+}
+
+.form input {
+  padding: 5px 0 5px 10px;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  min-width: 12rem;
+  background-color: #fff;
+}
+
+input:valid {
+  border: 2px solid var(--input__border);
+}
+
+.form input:focus {
+  border: 2px solid var(--cta);
+  outline: none;
+  filter: drop-shadow(5px 3px 0.2rem rgba(92, 116, 255, 0.336));
+}
+
+.form__leftSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__rightSide {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn__account {
+  font-family: var(--spartan-font);
+  font-size: 1.2rem;
+}
+
+.btn__login {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+input:invalid {
+  border: 2px solid var(--error);
+}
+
+.error_msg {
+  margin-top: 7px;
+  color: var(--error);
+}
+
+@media screen and (max-width: 870px) {
+  .page {
+    height: 100%;
+    grid-template-areas:
+      "img img"
+      "signUp signUp"
+      "signUp signUp";
+  }
+  .image_sidebar {
+    width: 100vw;
+    height: 40vh;
+  }
+  .form__wrapper {
+    text-align: center;
+    margin-right: 2rem;
+  }
+  .content {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .content__header {
+    justify-content: start;
+  }
+  .cta__area {
+    align-items: stretch;
+    text-align: center;
+    margin-right: 2rem;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .form {
+    flex-direction: column;
+  }
+}
