@@ -37,6 +37,22 @@ fieldset {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
+}
+
+.caption {
+  width: 100%;
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: var(--page-color);
+  font-size: var(--spartan-font);
+}
+
+.caption a {
+  text-decoration: none;
+  color: gold;
 }
 
 .image__logo {
